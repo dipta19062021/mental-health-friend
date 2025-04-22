@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1mp_sGIsE9GPVgd-oHF8nEFb4tqLydYp2
 """
 
-pip install langchain_groq
 
 from langchain_groq import ChatGroq
 llm=ChatGroq(
@@ -21,7 +20,6 @@ llm=ChatGroq(
 result= llm.invoke("What is Bipolar Disorder?")
 print(result.content)
 
-!pip install Pypdf
 
 from langchain.embeddings import HuggingFaceBgeEmbeddings
 from langchain.document_loaders import PyPDFLoader, DirectoryLoader
@@ -31,7 +29,6 @@ from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-!pip install -U langchain-community
 
 import os
 from langchain.chains import RetrievalQA
@@ -237,8 +234,6 @@ app.launch(share=True, debug=True)
 
 
 
-
-!pip install gradio
 
 
 
