@@ -230,7 +230,7 @@ with gr.Blocks(css=calm_css) as app:
     bot_msg = chat_msg.then(bot, chatbot, chatbot)
     bot_msg.then(lambda: gr.MultimodalTextbox(interactive=True), None, [chat_input])
 
-app.launch(server_name="0.0.0.0", server_port=8080,share=True, debug=True)
+app.launch(share=True, debug=True)
 
 
 
