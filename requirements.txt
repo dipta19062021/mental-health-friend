@@ -2,5 +2,5 @@ gradio
 langchain
 langchain_groq
 chromadb
-sentence-transformers
+
 PyPDF2
