@@ -1,7 +1,13 @@
-gradio
-langchain
-langchain_groq
-chromadb
-speechrecognition
-PyPDF2
-gTTS pydub
+gradio==4.24.0
+gTTS==2.5.1
+pydub==0.25.1
+SpeechRecognition==3.10.0
+langchain==0.1.13
+langchain-groq==0.1.0
+chromadb==0.4.24
+huggingface-hub==0.21.4
+transformers==4.40.1
+torch>=2.0.0
+PyPDF2==3.0.1
+tiktoken==0.5.1
+ffmpeg-python==0.2.0
