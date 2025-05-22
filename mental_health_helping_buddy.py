@@ -18,7 +18,38 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 def initialize_llm():
     llm = ChatGroq(
         temperature=0,
-        groq_api_key='YOUR API KEY',
+        groq_api_key='import gradio as gr
+import time
+import os
+from langchain.chains import RetrievalQA
+from langchain_groq import ChatGroq
+from langchain.embeddings import HuggingFaceBgeEmbeddings
+from langchain.document_loaders import PyPDFLoader, DirectoryLoader
+from langchain.vectorstores import Chroma
+from langchain.prompts import PromptTemplate
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+# === LLM + VectorDB Setup ===
+def initialize_llm():
+    llm = ChatGroq(
+        temperature=0,
+        groq_api_key='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',
+        model="llama-3.3-70b-versatile"
+    )
+    return llm
+
+def create_vector_db():
+    loader = DirectoryLoader("/content/data", glob="*.pdf", loader_cls=PyPDFLoader)
+    documents = loader.load()
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+    texts = text_splitter.split_documents(documents)
+    embeddings = HuggingFaceBgeEmbeddings(model_name="BAAI/bge-large-en-v1.5")
+    vector_db = Chroma.from_documents(texts, embeddings, persist_directory="./Chroma_db")
+    vector_db.persist()
+    print("Chroma db created and saved successfully")
+    return vector_db
+
+',
         model="llama-3.3-70b-versatile"
     )
     return llm
