@@ -18,21 +18,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 def initialize_llm():
     llm = ChatGroq(
         temperature=0,
-        groq_api_key='import gradio as gr
-import time
-import os
-from langchain.chains import RetrievalQA
-from langchain_groq import ChatGroq
-from langchain.embeddings import HuggingFaceBgeEmbeddings
-from langchain.document_loaders import PyPDFLoader, DirectoryLoader
-from langchain.vectorstores import Chroma
-from langchain.prompts import PromptTemplate
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-
-# === LLM + VectorDB Setup ===
-def initialize_llm():
-    llm = ChatGroq(
-        temperature=0,
         groq_api_key='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',
         model="llama-3.3-70b-versatile"
     )
