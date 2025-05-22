@@ -18,7 +18,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 def initialize_llm():
     llm = ChatGroq(
         temperature=0,
-        groq_api_key='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',
+        groq_api_key='YOUR API KEY',
         model="llama-3.3-70b-versatile"
     )
     return llm
