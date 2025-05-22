@@ -2,5 +2,6 @@ gradio
 langchain
 langchain_groq
 chromadb
-
+speechrecognition
 PyPDF2
+gTTS pydub
