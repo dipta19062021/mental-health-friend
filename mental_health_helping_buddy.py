@@ -34,22 +34,6 @@ def create_vector_db():
     print("Chroma db created and saved successfully")
     return vector_db
 
-',
-        model="llama-3.3-70b-versatile"
-    )
-    return llm
-
-def create_vector_db():
-    loader = DirectoryLoader("/content/data", glob="*.pdf", loader_cls=PyPDFLoader)
-    documents = loader.load()
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-    texts = text_splitter.split_documents(documents)
-    embeddings = HuggingFaceBgeEmbeddings(model_name="BAAI/bge-large-en-v1.5")
-    vector_db = Chroma.from_documents(texts, embeddings, persist_directory="./Chroma_db")
-    vector_db.persist()
-    print("Chroma db created and saved successfully")
-    return vector_db
-
 def setup_q_chain(vector_db, llm):
     retriever = vector_db.as_retriever()
     prompt_template = """You are a mental health chatbot. Respond through this:
